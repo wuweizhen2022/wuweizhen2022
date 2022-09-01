@@ -1,0 +1,27 @@
+<!-- <script src="https://unpkg.com/vue@3"></script> -->
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<script src="./vue.global.prod.js"></script>
+<script src="./config.js"></script>
+
+<script type="module">
+  const { createApp } = Vue
+  import displayLoveTime from "./displayLoveTime.js"
+  const app = createApp({
+    components: {
+      displayLoveTime
+    },
+    data() {
+      return {
+        lovers
+      }
+    }
+  })
+  
+  app.mount('#app')
+</script>
+
+
+<div id="app">
+  <display-love-time :lovers = "lovers"></display-love-time>
+</div>
